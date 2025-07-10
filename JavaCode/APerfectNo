@@ -1,0 +1,29 @@
+package triangle;
+
+public class APerfectNumber {
+
+	public static void main(String[] args) {
+		System.out.println(isPerfectNumber(28));
+	}
+
+	public static boolean isPerfectNumber(int number) {
+
+		if (number <= 0) {
+			return false;
+		}
+
+		int sum = 0;
+		for (int i = 1; i < number; i++) {
+			if (number % i == 0) {
+				sum = sum + i;
+			}
+		}
+		System.out.println("sum is:" + sum);
+		if (number == sum) {
+			System.out.println("A Perfect number");
+			return sum == number;
+		} else {
+			return false;
+		}
+	}
+}
