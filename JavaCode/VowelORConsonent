@@ -8,7 +8,8 @@ public class SwitchForVowel {
 
 	public static boolean isVowel(char ch) {
 		switch (ch) {
-		case 'A':
+		case 'A':                        	//case 'A', 'E', 'I', 'O', 'U':
+                                         		//case 'a', 'e', 'i', 'o', 'u':
 		case 'E':
 		case 'I':
 		case 'O':
