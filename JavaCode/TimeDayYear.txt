@@ -1,0 +1,25 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.*;
+Integer seven=7;
+Integer sevenAgain=7;
+seven=sevenAgain
+seven==sevenAgain
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+Integer.SIZE
+Integer.BYTES
+LocalDate now=LocalDate.now();
+LocalDate today=LocalDate.now();
+today.getYear()
+today.getMonth()
+today.getDayOfWeek()
+today.getDayOfYear()
+today.getMonthValue()
+today.isLeapYear()
+today.lengthOfYear()
+today.lengthOfMonth()
+today.plusDays(100)
+today.plusMonths(100)
+today.plusYears(100)
+today.minusYears(100)
