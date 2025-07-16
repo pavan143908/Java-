@@ -1,0 +1,141 @@
+jshell> void print(int... values){
+   ...>     System.out.println(Arrays.toString(values));}
+|  created method print(int...)
+
+jshell> print(1)
+[1]
+
+jshell> print(1,2,25,2)
+[1, 2, 25, 2]
+
+
+jshell> int add(int... values){
+   ...>     sum=0;
+   ...>     for(int value:values){
+   ...>         sum+=value;
+   ...>     }
+   ...>     return sum;
+   ...> }
+|  created method add(int...), however, it cannot be invoked until variable sum is declared
+
+jshell> add(1,2)
+|  attempted to call method add(int...) which cannot be invoked until variable sum is declared
+
+jshell> int add(int... values){
+   ...>  int   sum=0;
+   ...>     for(int value:values){
+   ...>         sum+=value;
+   ...>     }
+   ...>     return sum;
+   ...> }
+|  modified method add(int...)
+
+jshell> add(1,2)
+$7 ==> 3
+
+jshell> add(1,2,5)
+
+$8==>8
+
+jshell> class person{}
+|  created class person
+
+jshell> person[] persons=new person[5];
+persons ==> person[5] { null, null, null, null, null }
+
+jshell> persons [1]= new person();
+$12 ==> person@e2d56bf
+
+jshell> persons
+persons ==> person[5] { null, person@e2d56bf, null, null, null }
+
+jshell> person[] person2={new person(),new person()}
+person2 ==> person[2] { person@5fdef03a, person@3b22cdd0 }
+
+jshell> String[] str={"apple","ball","cat"}
+str ==> String[3] { "apple", "ball", "cat" }
+
+
+jshell> ArrayList arraylist =new ArrayList();
+arraylist ==> []
+jshell> arraylist.add("apple")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arraylist.add("apple")
+|  ^--------------------^
+$17 ==> true
+
+jshell> arraylist.add("ball")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arraylist.add("ball")
+|  ^-------------------^
+$18 ==> true
+
+jshell> arraylist.add("cat")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arraylist.add("cat")
+|  ^------------------^
+$19 ==> true
+
+jshell> arraylist
+arraylist ==> [apple, ball, cat]
+
+jshell> arraylist.
+add(               addAll(            addFirst(          addLast(           clear()            clone()            contains(          containsAll(
+ensureCapacity(    equals(            forEach(           get(               getClass()         getFirst()         getLast()          hashCode()
+indexOf(           isEmpty()          iterator()         lastIndexOf(       listIterator(      notify()           notifyAll()        parallelStream()
+remove(            removeAll(         removeFirst()      removeIf(          removeLast()       replaceAll(        retainAll(         reversed()
+set(               size()             sort(              spliterator()      stream()           subList(           toArray(           toString()
+trimToSize()       wait(
+jshell> arraylist.remove("cat")
+$21 ==> true
+
+jshell> arraylist
+arraylist ==> [apple, ball]
+
+jshell> arraylist.add(1)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arraylist.add(1)
+|  ^--------------^
+$23 ==> true
+
+jshell> arraylist
+arraylist ==> [apple, ball, 1]
+
+jshell> ArrayList<String> items =new ArrayList<String>();
+items ==> []
+
+jshell> items.add("a");
+$26 ==> true
+
+jshell> items.add("bc");
+$27 ==> true
+
+jshell> items.add("def");
+$28 ==> true
+
+jshell> items;
+items ==> [a, bc, def]
+
+jshell> items.add(2);
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  items.add(2);
+|            ^
+
+jshell> items.remove(2);
+$30 ==> "def"
+
+jshell> items
+items ==> [a, bc]
+
+jshell> items.remove("bc");
+$32 ==> true
+
+jshell> items
+items ==> [a]
+
+       
