@@ -1,0 +1,61 @@
+
+jshell> class Animal{}
+|  created class Animal
+
+jshell> class Pet extends Animal{
+   ...>     public void groom(){
+   ...>         System.out.println("grooming");
+   ...>     }
+   ...> }
+|  created class Pet
+
+jshell> class Dog extends Pet{
+   ...> }
+|  created class Dog
+
+jshell> Dog dog=new Dog()
+dog ==> Dog@69d0a921
+
+jshell> dog.toString()
+$7 ==> "Dog@69d0a921"
+
+jshell> dog.groom()
+grooming
+
+jshell> Pet pet =new Dog()
+pet ==> Dog@41906a77
+
+jshell> pet.groom()
+grooming
+
+jshell> Dog dog= new Pet()
+|  Error:
+|  incompatible types: Pet cannot be converted to Dog
+|  Dog dog= new Pet();
+|           ^-------^
+
+jshell> pet instanceof Dog
+$11 ==> true
+
+jshell> pet instanceof Pet
+$12 ==> true
+
+jshell> pet instanceof Animal
+$13 ==> true
+
+jshell> pet instanceof Object
+$14 ==> true
+
+jshell> Animal animal=new Animal()
+animal ==> Animal@46fbb2c1
+
+jshell> animal instanceof Animal
+$16 ==> true
+
+jshell> animal instanceof Dog
+$17 ==> false
+
+jshell> animal instanceof Pet
+$18 ==> false
+
+jshell>            
