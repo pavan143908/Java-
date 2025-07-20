@@ -1,0 +1,106 @@
+
+jshell> interface Interface1{
+   ...>     void method1();
+   ...> }
+|  created interface Interface1
+
+jshell> interface Interface2 extends Interface1{
+   ...>     void method2();
+   ...> }
+|  created interface Interface2
+
+
+jshell> class Implementation implements  Interface2{
+   ...>   public  void method2();
+   ...> }
+|  Error:
+|  Implementation is not abstract and does not override abstract method method1() in Interface1
+|  class Implementation implements  Interface2{
+|  ^-------------------------------------------...
+|  Error:
+|  missing method body, or declare abstract
+|    public  void method2();
+|    ^---------------------^
+
+jshell> class Implementation implements  Interface2{
+   ...>   public  void method2();
+   ...> public void method1();
+   ...> }
+|  Error:
+|  missing method body, or declare abstract
+|    public  void method2();
+|    ^---------------------^
+|  Error:
+|  missing method body, or declare abstract
+jshell> class Implementation implements  Interface2{
+   ...>   public  void method2(){}
+   ...> public void method1(){}){}
+   ...> }
+|  created class Implementation
+
+jshell> class Implementation implements  Interface2{
+   ...>   public  void method2(){}
+   ...> public void method1(){}
+   ...> }
+|  modified class Implementation
+
+jshell> class Implementation implements  Interface2{
+   ...>   public  void method2(){}
+   ...>
+   ...> }
+|  Error:
+|  Implementation is not abstract and does not override abstract method method1() in Interface1
+|  class Implementation implements  Interface2{
+|  ^-------------------------------------------...
+
+jshell> abstract class ImplementationAbstract implements  Interface2{
+   ...>   public  void method2(){}
+   ...>
+   ...> }
+|  created class ImplementationAbstract
+
+jshell> interface Interface3 {
+   ...>     int test;
+   ...> }
+|  Error:
+|  = expected
+|      int test;
+|              ^
+
+jshell> interface Interface3 {
+   ...>     int test=5;
+   ...> }
+|  created interface Interface3
+
+jshell> interface Interface4 {
+   ...>     default void print(){
+   ...>     System.out.println("default");
+   ...> }
+   ...> }
+|  created interface Interface4
+
+jshell>
+   ...> class Test implements Interface4{
+   ...> }
+|  created class Test
+
+jshell> Test tested=new Test()
+tested ==> Test@7aec35a
+
+jshell> tested.print()
+default
+
+jshell> class Test1 implements Interface4{
+   ...>  public void print(){
+   ...>         System.out.println("overrided method");
+   ...>     }
+   ...> }
+|  created class Test1
+
+jshell> Test1 tested1=new Test1()
+tested1 ==> Test1@1de0aca6
+
+jshell> tested1.print()
+overrided method
+
+jshell>
