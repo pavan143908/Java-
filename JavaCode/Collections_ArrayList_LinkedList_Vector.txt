@@ -1,0 +1,209 @@
+
+jshell> List<String> words=List.of("Apple","Bat","Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> words.size()
+$2 ==> 3
+
+jshell> words.isEmpty()
+$3 ==> false
+
+jshell> words.get(0)
+$4 ==> "Apple"
+
+jshell> words.contains("Dog")
+$5 ==> false
+
+jshell> words.contains("Cat")
+$6 ==> true
+
+jshell> words.contains("cat")
+$7 ==> false
+
+jshell> words.indexOf("Cat")
+$8 ==> 2
+
+jshell> words.indexOf("Dog")
+$9 ==> -1
+
+jshell> words
+words ==> [Apple, Bat, Cat]
+
+jshell> words.add("Dog")
+|  Exception java.lang.UnsupportedOperationException
+|        at ImmutableCollections.uoe (ImmutableCollections.java:142)
+|        at ImmutableCollections$AbstractImmutableCollection.add (ImmutableCollections.java:147)
+|        at (#12:1)
+
+jshell> List<String> wordsArrayList=new ArrayList<String>(words)
+wordsArrayList ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsLinkedList=new LinkedList<String>(words)
+wordsLinkedList ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsVector=new Vector<String>(words)
+wordsVector ==> [Apple, Bat, Cat]
+
+jshell> wordsArrayList.add("Dog")
+$16 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog]
+
+jshell> List<Integer> words1=List.of(1,2,3,4,5,6,7,8,9)
+words1 ==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+jshell> words1.size()
+$21 ==> 9
+
+jshell> words1.isEmpty()
+$22 ==> false
+
+jshell> words1.get(0)
+$23 ==> 1
+
+jshell> words1.get(1)
+$24 ==> 2
+
+jshell> words1.get(8)
+$26 ==> 9
+
+jshell> words.contains(5)
+$27 ==> false
+
+jshell> words
+words ==> [Apple, Bat, Cat]
+
+jshell> words1.contains(5)
+$29 ==> true
+
+jshell> words1.indexOf(5)
+$30 ==> 4
+
+jshell> words1
+words1 ==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+jshell> List<Integer> words1ArrayList= new ArrayList<Integer>(words1)
+words1ArrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+jshell> words1ArrayList
+words1ArrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+jshell> words1ArrayList.add(20)
+$35 ==> true
+
+jshell> words1ArrayList
+words1ArrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 20]
+
+jshell> words1ArrayList.
+add(               addAll(            addFirst(          addLast(           clear()            contains(          containsAll(       equals(
+forEach(           get(               getClass()         getFirst()         getLast()          hashCode()         indexOf(           isEmpty()
+iterator()         lastIndexOf(       listIterator(      notify()           notifyAll()        parallelStream()   remove(            removeAll(
+removeFirst()      removeIf(          removeLast()       replaceAll(        retainAll(         reversed()         set(               size()
+sort(              spliterator()      stream()           subList(           toArray(           toString()         wait(
+
+jshell> words1ArrayList.removeLast()
+$38 ==> 20
+
+jshell> words1ArrayList
+words1ArrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+jshell> words1ArrayList.get(5)
+$42 ==> 6
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog]
+
+jshell> words1ArrayList
+words1ArrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+jshell> wordsArrayList.add("Elephant")
+$45 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog, Elephant]
+
+jshell> wordsArrayList.add(2,"Ball")
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant]
+
+jshell> List <String> animals=List.of("ani1","ani2")
+animals ==> [ani1, ani2]
+
+jshell> wordsArrayList.addAll(animals)
+$50 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, ani1, ani2]
+
+jshell> animals
+animals ==> [ani1, ani2]
+
+jshell> wordsArrayList.addAll(2,animals)
+$53 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, ani1, ani2, Ball, Cat, Dog, Elephant, ani1, ani2]
+
+jshell> wordsArrayList.
+   ...>
+add(               addAll(            addFirst(          addLast(           clear()            contains(          containsAll(       equals(
+forEach(           get(               getClass()         getFirst()         getLast()          hashCode()         indexOf(           isEmpty()
+iterator()         lastIndexOf(       listIterator(      notify()           notifyAll()        parallelStream()   remove(            removeAll(
+removeFirst()      removeIf(          removeLast()       replaceAll(        retainAll(         reversed()         set(               size()
+jshell> wordsArrayList.remove("ani1")
+$55 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, ani2, Ball, Cat, Dog, Elephant, ani1, ani2]
+
+jshell> wordsArrayList.remove("ani2")
+$57 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, ani1, ani2]
+
+jshell> wordsArrayList.set(6,"animal3")
+$59 ==> "ani1"
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, animal3, ani2]
+
+jshell> wordsArrayList.removeAll(7)
+|  Error:
+|  incompatible types: int cannot be converted to java.util.Collection<?>
+|  wordsArrayList.removeAll(7)
+|                           ^
+
+jshell> wordsArrayList.remove(7)
+$61 ==> "ani2"
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, animal3]
+
+jshell> for(int i=0;i<words.size();i++){
+   ...>     System.out.println(words.get(i));
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> for(String words1:words){
+   ...>     System.out.println(words1);
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> Iterator wordsIterator=words.iterator();
+wordsIterator ==> java.util.ImmutableCollections$ListItr@2d6d8735
+
+jshell> while(wordsIterator.hasNext()){
+   ...>     System.out.println(wordsIterator.next());
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> 
