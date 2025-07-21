@@ -206,4 +206,50 @@ Apple
 Bat
 Cat
 
-jshell> 
+
+jshell> List<String> words=List.of("Apple","Bat","Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsAl=new ArrayList<>(words)
+wordsAl ==> [Apple, Bat, Cat]
+
+jshell> for(String word:words){
+   ...>     if(word.endsWith("at")){
+   ...>         System.out.println(word);
+   ...>     }
+   ...> }
+Bat
+Cat
+
+jshell> for(String word:wordsAl){
+   ...>     if(word.endsWith("at")){
+   ...>         wordsAl.remove(word);
+   ...>     }
+   ...> }
+
+jshell> wordsAl
+wordsAl ==> [Apple, Cat]
+
+//problem in removing due to issue in for loop for of com,pressed so,we use iterator option
+
+
+
+//Iterator
+
+jshell> List<String> wordsAl=new ArrayList<>(words)
+wordsAl ==> [Apple, Bat, Cat]
+
+jshell> Iterator <String> iterator=wordsAl.iterator();
+iterator ==> java.util.ArrayList$Itr@5d22bbb7
+
+
+jshell> while(iterator.hasNext()){
+   ...>    if( iterator.next().endsWith("at")){
+   ...>         iterator.remove();
+   ...>     }
+   ...> }
+
+jshell> wordsAl
+wordsAl ==> [Apple]
+
+jshell>                      
