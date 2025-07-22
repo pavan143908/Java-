@@ -1,3 +1,7 @@
+//created on 22/07/2025
+
+
+
 jshell> List value=List.of("A",'A',1,1.0)
 value ==> [A, A, 1, 1.0]
 
