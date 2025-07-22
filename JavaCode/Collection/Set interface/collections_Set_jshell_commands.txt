@@ -1,0 +1,171 @@
+jshell> Set<String> set=Set.of("Apple","Banana","Carrot")
+set ==> [Apple, Banana, Carrot]
+
+jshell> Set<String> hashset=new HashSet<>(set)
+hashset ==> [Apple, Carrot, Banana]
+
+jshell> hashset
+hashset ==> [Apple, Carrot, Banana]
+
+jshell> Set<String> set=Set.of("Apple","Banana","carrot")
+set ==> [carrot, Apple, Banana]
+
+jshell> Set<String> set=Set.of("Apple","Banana","Carrot")
+set ==> [Apple, Banana, Carrot]
+
+jshell> Set<String> hashset=new HashSet<>(set)
+hashset ==> [Apple, Carrot, Banana]
+
+jshell> hashset.add("Apple")
+$7 ==> false
+
+
+jshell>
+
+
+
+jshell> Set<Integer> numbers=new HashSet<>();
+numbers ==> []
+
+jshell> numbers.add(7654321);
+$9 ==> true
+
+jshell> numbers.add(765432);
+$10 ==> true
+
+jshell> numbers.add(76543);
+$11 ==> true
+
+jshell> numbers.add(7654);
+$12 ==> true
+
+jshell> numbers.add(765);
+$13 ==> true
+
+jshell> numbers.add(76);
+$14 ==> true
+
+jshell> numbers.add(7);
+$15 ==> true
+
+jshell> numbers
+numbers ==> [765432, 7654321, 7654, 7, 76, 765, 76543]
+
+jshell> Set<Integer> numbers=new LinkedHashSet<>();
+numbers ==> []
+
+jshell> numbers.add(7654321);
+$18 ==> true
+
+jshell> numbers.add(765432);
+$19 ==> true
+
+jshell> numbers.add(76543);
+$20 ==> true
+
+jshell> numbers.add(7654);
+$21 ==> true
+
+jshell> numbers.add(765);
+$22 ==> true
+
+jshell> numbers.add(76);
+$23 ==> true
+
+jshell> numbers.add(76);
+$24 ==> false
+
+jshell> numbers;
+numbers ==> [7654321, 765432, 76543, 7654, 765, 76]
+
+jshell> numbers.add(7);
+$26 ==> true
+
+jshell> numbers;
+numbers ==> [7654321, 765432, 76543, 7654, 765, 76, 7]
+
+jshell>
+
+jshell>
+
+jshell> Set<Integer> numbers=new TreeSet<>();
+numbers ==> []
+
+jshell> numbers.add(7654321);
+$29 ==> true
+
+jshell> numbers.add(765432);
+$30 ==> true
+
+jshell> numbers.add(76543);
+$31 ==> true
+
+jshell> numbers.add(7654);
+$32 ==> true
+
+jshell> numbers.add(765);
+$33 ==> true
+
+jshell> numbers.add(76);
+$34 ==> true
+
+jshell> numbers.add(76);
+$35 ==> false
+
+jshell> numbers
+numbers ==> [76, 765, 7654, 76543, 765432, 7654321]
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell> TreeSet<Integer> number=new TreeSet<>(Set.of(55,44,24,22,80));
+number ==> [22, 24, 44, 55, 80]
+
+jshell> number.floor(50)
+$38 ==> 44
+
+jshell> number.floor(44)
+$39 ==> 44
+
+jshell> number.lower(44)
+$40 ==> 24
+
+jshell> number.ceiling(44)
+$41 ==> 44
+
+jshell> number.higher(44)
+$42 ==> 55
+
+jshell> number
+number ==> [22, 24, 44, 55, 80]
+
+jshell> number.higher(80)
+$44 ==> null
+
+jshell> number.subSet(20,50)
+$45 ==> [22, 24, 44]
+
+jshell> number.subSet(22,50)
+$46 ==> [22, 24, 44]
+
+jshell> number.subSet(22,44)
+$47 ==> [22, 24]
+
+jshell> number.subSet(22,true,44,true)
+$48 ==> [22, 24, 44]
+
+jshell> number.subSet(22,false,44,false)
+$49 ==> [24]
+
+jshell> number.headSet(50)
+$50 ==> [22, 24, 44]
+
+jshell> number.tailSet(50)
+$51 ==> [55, 80]
+
+jshell>
