@@ -1,0 +1,50 @@
+//Created on   23/07/2025
+
+jshell> Queue<String> queue=new PriorityQueue<>();
+queue ==> []
+
+jshell> queue.poll()
+$2 ==> null
+
+jshell> queue.offer("Apple")
+$3 ==> true
+
+jshell> queue
+queue ==> [Apple]
+
+
+jshell> queue.addAll(List.of("Zebra","Monkey","Cat"));
+$4 ==> true
+
+jshell> queue.poll()
+$5 ==> "Apple"
+
+jshell> queue
+queue ==> [Cat, Zebra, Monkey]
+
+jshell> queue.poll()
+$7 ==> "Cat"
+
+jshell> queue
+queue ==> [Monkey, Zebra]
+
+jshell> queue.poll()
+$9 ==> "Monkey"
+
+jshell> queue
+queue ==> [Zebra]
+
+jshell> queue.poll()
+$11 ==> "Zebra"
+
+jshell> queue.poll()
+$12 ==> null
+
+jshell> queue
+queue ==> []
+
+jshell> 
+
+jshell> 
+
+jshell>
