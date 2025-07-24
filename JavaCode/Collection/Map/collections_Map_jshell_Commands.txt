@@ -1,0 +1,211 @@
+//Created on 24/07/2025
+
+jshell>
+
+jshell> Map<String ,Integer > map=Map.of("A",3,"B",5,"Z",10);
+map ==> {A=3, B=5, Z=10}
+
+jshell> map.
+clear()             compute(            computeIfAbsent(    computeIfPresent(   containsKey(        containsValue(      entrySet()
+equals(             forEach(            get(                getClass()          getOrDefault(       hashCode()          isEmpty()
+keySet()            merge(              notify()            notifyAll()         put(                putAll(             putIfAbsent(
+remove(             replace(            replaceAll(         size()              toString()          values()            wait(
+jshell> map.put("R",6);
+|  Exception java.lang.UnsupportedOperationException
+|        at ImmutableCollections.uoe (ImmutableCollections.java:142)
+|        at ImmutableCollections$AbstractImmutableMap.put (ImmutableCollections.java:1081)
+|        at (#2:1)
+
+jshell> map
+map ==> {A=3, B=5, Z=10}
+
+jshell> map.get("Z")
+$4 ==> 10
+
+jshell> map.get("A")
+$5 ==> 3
+
+jshell> map.get("B")
+$6 ==> 5
+
+jshell> map.get("C")
+$7 ==> null
+
+jshell> map.isEmpty()
+$8 ==> false
+
+jshell> map.size()
+$9 ==> 3
+
+jshell> map.containsKey("A")
+$10 ==> true
+
+jshell> map.containsKey("B")
+$11 ==> true
+
+jshell> map.containsKey("C")
+$12 ==> false
+
+jshell> map.containsValue(6)
+$13 ==> false
+
+jshell> map.containsValue(3)
+$14 ==> true
+
+jshell> map.keySet()
+$15 ==> [A, B, Z]
+
+jshell> map.values()
+$16 ==> [3, 5, 10]
+
+jshell> Map<String ,Integer > map=Map.of("A",3,"B",5,"Z",10);
+map ==> {A=3, B=5, Z=10}
+
+jshell> Map<String ,Integer > hashMap=new HashMap<>(map)
+hashMap ==> {A=3, B=5, Z=10}
+
+jshell> hashMap.put("F",6)
+$19 ==> null
+
+jshell> hashMap
+hashMap ==> {A=3, B=5, Z=10, F=6}
+
+jshell> hashMap.put("F",90)
+$21 ==> 6
+
+jshell> hashMap
+hashMap ==> {A=3, B=5, Z=10, F=90}
+
+jshell> HashMap<String ,Integer> hashmap=new HashMap<>()
+hashmap ==> {}
+
+jshell> hashmap.put("pavan",1);
+$25 ==> null
+
+jshell> hashmap
+hashmap ==> {pavan=1}
+
+jshell> hashmap.put("vijay",2);
+$27 ==> null
+
+jshell> hashmap.put("arun",3);
+$28 ==> null
+
+jshell> hashmap.put("likith",4);
+$29 ==> null
+
+jshell> hashmap.put("vinod",5);
+$30 ==> null
+
+jshell> hashmap.put("mani",6);
+$31 ==> null
+
+jshell> hashmap
+hashmap ==> {vinod=5, arun=3, pavan=1, likith=4, mani=6, vijay=2}
+
+jshell> LinkedHashMap<String ,Integer> linkedHashMap=new LinkedHashMap<>()
+linkedHashMap ==> {}
+
+jshell> hashmap
+hashmap ==> {vinod=5, arun=3, pavan=1, likith=4, mani=6, vijay=2}
+
+
+jshell> linkedHashMap.put("a",90);
+$35 ==> null
+
+jshell> linkedHashMap.put("b",80);
+$36 ==> null
+
+jshell> linkedHashMap.put("c",40);
+$37 ==> null
+
+jshell> linkedHashMap.put("d",15);
+$38 ==> null
+
+jshell> linkedHashMap
+linkedHashMap ==> {a=90, b=80, c=40, d=15}
+
+jshell> linkedHashMap.put("AA",05);
+$40 ==> null
+
+jshell> linkedHashMap
+linkedHashMap ==> {a=90, b=80, c=40, d=15, AA=5}
+
+jshell> linkedHashMap.put("aa",045);
+$42 ==> null
+
+jshell> linkedHashMap
+linkedHashMap ==> {a=90, b=80, c=40, d=15, AA=5, aa=37}
+
+jshell> linkedHashMap.put("aa",45);
+$44 ==> 37
+
+jshell> linkedHashMap
+linkedHashMap ==> {a=90, b=80, c=40, d=15, AA=5, aa=45}
+
+jshell> TreeMap<String ,Integer> treeMap=new TreeMap<>()
+treeMap ==> {}
+
+jshell> treeMap.put("a",7)
+$47 ==> null
+
+jshell> treeMap.
+ceilingEntry(         ceilingKey(           clear()               clone()               comparator()          compute(              computeIfAbsent(
+computeIfPresent(     containsKey(          containsValue(        descendingKeySet()    descendingMap()       entrySet()            equals(
+firstEntry()          firstKey()            floorEntry(           floorKey(             forEach(              get(                  getClass()
+getOrDefault(         hashCode()            headMap(              higherEntry(          higherKey(            isEmpty()             keySet()
+lastEntry()           lastKey()             lowerEntry(           lowerKey(             merge(                navigableKeySet()     notify()
+notifyAll()           pollFirstEntry()      pollLastEntry()       put(                  putAll(               putFirst(             putIfAbsent(
+putLast(              remove(               replace(              replaceAll(           reversed()            sequencedEntrySet()   sequencedKeySet()
+sequencedValues()     size()                subMap(               tailMap(              toString()            values()              wait(
+
+
+jshell> TreeMap<String ,Integer> treeMap=new TreeMap<>()
+
+treeMap ==> {}
+
+jshell> treeMap.put("f",25)
+$49 ==> null
+
+jshell> treeMap.put("a",15)
+$50 ==> null
+
+jshell> treeMap.put("z",5)
+$51 ==> null
+
+jshell> treeMap.put("l",250)
+$52 ==> null
+
+jshell> treeMap
+treeMap ==> {a=15, f=25, l=250, z=5}
+
+jshell> treeMap.
+ceilingEntry(         ceilingKey(           clear()               clone()               comparator()          compute(              computeIfAbsent(
+computeIfPresent(     containsKey(          containsValue(        descendingKeySet()    descendingMap()       entrySet()            equals(
+firstEntry()          firstKey()            floorEntry(           floorKey(             forEach(              get(                  getClass()
+getOrDefault(         hashCode()            headMap(              higherEntry(          higherKey(            isEmpty()             keySet()
+lastEntry()           lastKey()             lowerEntry(           lowerKey(             merge(                navigableKeySet()     notify()
+notifyAll()           pollFirstEntry()      pollLastEntry()       put(                  putAll(               putFirst(             putIfAbsent(
+putLast(              remove(               replace(              replaceAll(           reversed()            sequencedEntrySet()   sequencedKeySet()
+sequencedValues()     size()                subMap(               tailMap(              toString()            values()              wait(
+
+jshell> treeMap.
+
+jshell>
+
+jshell>
+
+jshell>
+
+jshell>
+
+
+
+
+
+
+
+
+
+
+jshell>
