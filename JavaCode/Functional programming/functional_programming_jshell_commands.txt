@@ -1,0 +1,136 @@
+jshell> List<Integer> numbers=List.of(10,20,30,40,50,60,70,80,90)
+numbers ==> [10, 20, 30, 40, 50, 60, 70, 80, 90]
+                                  
+jshell> numbers.stream().forEach(element->System.out.println(element))
+10
+20
+30
+40
+50
+60
+70
+80
+90
+
+jshell> List<Integer> numbers=List.of(1,2,3,4,5,6,7,8,9,10)
+numbers ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> numbers.stream().filter(element->element%2==0).forEach(element->System.out.println(element))
+2
+4
+6
+8
+10
+
+jshell> numbers.stream().filter(element->element%2==1).forEach(element->System.out.println(element))
+1
+3
+5
+7
+9
+
+jshell> numbers.stream().forEach(element->System.out.println(element))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+jshell> for(int i:numbers){
+   ...>     System.out.println(i);}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+jshell> List<Integer> numbers=List.of(3,5,8,213,45,7,6,9)
+numbers ==> [3, 5, 8, 213, 45, 7, 6, 9]
+
+jshell> numbers.stream().sorted().forEach(element->System.out.println(element))
+3
+5
+6
+7
+8
+9
+45
+213
+jshell> List<Integer> numbers=List.of(3,5,8,8,213,45,7,6,9)
+numbers ==> [3, 5, 8, 8, 213, 45, 7, 6, 9]
+
+jshell> numbers.stream().sorted().forEach(element->System.out.println(element))
+3
+5
+6
+7
+8
+8
+9
+45
+213
+
+jshell> numbers.stream().distinct().forEach(element->System.out.println(element))
+3
+5
+8
+213
+45
+7
+6
+9
+
+jshell> numbers.stream().distinct().sorted().forEach(element->System.out.println(element))
+3
+5
+6
+7
+8
+9
+45
+213
+
+jshell> numbers.stream().distinct().map(element->element*element).forEach(element->System.out.println(element))
+9
+25
+64
+45369
+2025
+49
+36
+81
+
+jshell> IntStream.range(1,10).forEach(p->System.out.println(p))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+jshell> IntStream.range(1,11).map(p->p*p).forEach(p->System.out.println(p))
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+jshell>   
