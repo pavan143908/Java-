@@ -1,0 +1,89 @@
+jshell> IntStream.range(1,11).reduce(0,(n1,n2)->n1+n2)
+$1 ==> 55
+
+jshell> List.of(23,10,35,59).stream().max((n1,n2)->Integer.compare(n1,n2))
+$2 ==> Optional[59]
+
+jshell> $2
+$2 ==> Optional[59]
+
+jshell> $2.
+equals(            filter(            flatMap(           get()              getClass()         hashCode()         ifPresent(         ifPresentOrElse(
+isEmpty()          isPresent()        map(               notify()           notifyAll()        or(                orElse(            orElseGet(
+orElseThrow(       stream()           toString()         wait(
+
+jshell> $2.isPresent()
+$4 ==> true
+
+jshell> $2.get()
+$5 ==> 59
+
+jshell> List.of(23,10,35,59).stream().max((n1,n2)->Integer.compare(n1,n2)).get()
+$6 ==> 59
+
+jshell> $2.toString()
+$7 ==> "Optional[59]"
+
+jshell> List.of(23,10,35,59).stream().min((n1,n2)->Integer.compare(n1,n2)).get()
+$8 ==> 10
+
+jshell> List.of(23,10,35,59).stream().filter(n1->n1%2==1).forEach(e->System.out.println(e))
+23
+35
+59
+
+jshell> List.of(23,10,35,59).stream().filter(n1->n1%2==1).collect(Collectors.toList())
+$10 ==> [23, 35, 59]
+
+jshell> List.of(23,10,35,59).stream().filter(n1->n1%2==0).collect(Collectors.toList())
+$11 ==> [10]
+
+jshell> List.of(1,2,3,4,5,6,7,8,9,10).stream().forEach(e->System.out.println(e*e))
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+
+jshell> List.of(1,2,3,4,5,6,7,8,9,10).stream().map(e->e*e).collect(Collectors.toList())
+$13 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+jshell>
+
+jshell> IntStream.range(1,11).map(e->e*e)
+$14 ==> java.util.stream.IntPipeline$4@77a567e1
+
+jshell> IntStream.range(1,11).map(e->e*e).boxed().collect(Collectors.toList())
+$15 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+jshell> List.of(25,36,45,81,74).stream().filter(n->n%2==0).max((n1,n2)->Integer.compare(n1,n2))
+$16 ==> Optional[74]
+
+jshell> $16.get()
+$17 ==> 74
+
+jshell> List.of(25,31,45,81).stream().filter(n->n%2==0).max((n1,n2)->Integer.compare(n1,n2))
+$18 ==> Optional.empty
+
+jshell> $18.isPresent()
+$19 ==> false
+
+jshell> List.of(25,31,45,81).stream().filter(n->n%2==0).max((n1,n2)->Integer.compare(n1,n2)).orElse(0)
+$20 ==> 0
+
+jshell> List.of(25,31,45,81,74).stream().filter(n->n%2==0).max((n1,n2)->Integer.compare(n1,n2)).orElse(0)
+$21 ==> 74
+
+
+
+
+
+
+
+
