@@ -1,1 +1,11 @@
+// created on 28/07/2025
+jshell> Thread.sleep(1000)
 
+jshell> Thread.sleep(10000)
+
+jshell> Thread.sleep(10000)
+
+jshell> Thread.sleep(1000)
+
+jshell>
+//sleep concept makes to sleep like 10000 ==10seconds
